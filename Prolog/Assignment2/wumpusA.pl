@@ -1,12 +1,23 @@
 /*
-Figure 4.1(Right)
+Figure 4.1(Left)
 */
-map(c4,pit).
-map(c8,gold).
-map(c11,wumpus).
-map(c9, pit).
-map(c13,pit).
 
+map(c1, start).
+map(c2, breeze).
+map(c3, pit).
+map(c4, breeze).
+map(c5, stench).
+map(c6, empty).
+map(c7, breeze).
+map(c8, empty).
+map(c9, wumpus).
+map(c10, gold).
+map(c11, pit).
+map(c12, breeze).
+map(c13, stench).
+map(c14, empty).
+map(c15, breeze).
+map(c16, pit).
 
 adj_of(c1,c2).
 adj_of(c1,c5).
@@ -37,25 +48,18 @@ is_safe(Y) :- not(map(Y,pit)),not(map(Y,wumpus)).
 
 safe_moves(X,Y) :-avai_moves(X,Y), is_safe(Y).
 
-move(X,InitialList, ActionList, MaxActions):- 
-    safe_moves(X,Y),
-    append(InitialList,[Y], I),
-   	N is MaxActions-1,
-    nat(N),
-    move(Y,I,ActionList,N). 
-
 test(Action) :- write(Action), N is Action-1,nat(N),test(N).
 nat(N) :- N > 0.
 
-move2(X,InitialList, ActionList, MaxActions):- 
+move(X,InitialList, ActionList, MaxActions):- 
     g(X),
     ActionList = InitialList;
     safe_moves(X,Y),
     not(member(Y,InitialList)),
     append(InitialList,[Y], L),
     N is MaxActions-1,
-    nat(N),
-    move2(Y, L, ActionList, N).
+    nat(N+1),
+    move(Y, L, ActionList, N).
 
 
 

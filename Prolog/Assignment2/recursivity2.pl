@@ -2,7 +2,7 @@ write_star(0) :- !.
 write_star(N):- nat(N-1), T is N-1, write('#'), write_star(T).
 
 write_space(0) :- !.
-write_space(N):- nat(N-1), T is N-1, write('+'), write_space(T).
+write_space(N):- nat(N-1), T is N-1, write(' '), write_space(T).
 
 nat(T) :- T >=0.
 
