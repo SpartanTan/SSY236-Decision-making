@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(myservice)
+project(tiago_service)
 
 ## Compile as C++11, supported in ROS Kinetic and newer
 # add_compile_options(-std=c++11)
@@ -7,13 +7,21 @@ project(myservice)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED 
-COMPONENTS 
-roscpp
-rospy
-std_msgs
-rosprolog
-message_generation
+find_package(catkin REQUIRED COMPONENTS
+  aruco_msgs
+  control_msgs
+  geometry_msgs
+  knowrob_tutorial
+  message_generation
+  move_base_msgs
+  moveit_msgs
+  moveit_ros_planning_interface
+  nav_msgs
+  roscpp
+  rospy
+  shape_msgs
+  std_msgs
+  trajectory_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -57,10 +65,11 @@ message_generation
 # )
 
 ## Generate services in the 'srv' folder
-add_service_files(
-  FILES
-  drink.srv
-)
+# add_service_files(
+#   FILES
+#   Service1.srv
+#   Service2.srv
+# )
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -70,10 +79,10 @@ add_service_files(
 # )
 
 ## Generate added messages and services with any dependencies listed here
-generate_messages(
-  DEPENDENCIES
-  std_msgs  # Or other packages containing msgs
-)
+# generate_messages(
+#   DEPENDENCIES
+#   aruco_msgs#   control_msgs#   geometry_msgs#   move_base_msgs#   moveit_msgs#   nav_msgs#   shape_msgs#   std_msgs#   trajectory_msgs
+# )
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -106,14 +115,10 @@ generate_messages(
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
 #  INCLUDE_DIRS include
-#  LIBRARIES myservice
- CATKIN_DEPENDS roscpp std_msgs rosprolog message_runtime
+#  LIBRARIES tiago_service
+#  CATKIN_DEPENDS aruco_msgs control_msgs geometry_msgs knowrob_tutorial message_generation move_base_msgs moveit_msgs moveit_ros_planning_interface nav_msgs roscpp rospy shape_msgs std_msgs trajectory_msgs
 #  DEPENDS system_lib
 )
-find_package(PkgConfig)
-pkg_check_modules(SWIPL REQUIRED swipl)
-include_directories(${SWIPL_INCLUDE_DIRS})
-link_directories(${SWIPL_LIBRARY_DIRS})
 
 ###########
 ## Build ##
@@ -124,20 +129,14 @@ link_directories(${SWIPL_LIBRARY_DIRS})
 include_directories(
 # include
   ${catkin_INCLUDE_DIRS}
-  src/
 )
 
-file(GLOB_RECURSE ONTO_INC RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
-        src/*.hpp include/*.h)
-
-# include all c++ files
-file(GLOB SRC_HELPERS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} 
-        src/*.cpp)
-        
 ## Declare a C++ library
 # add_library(${PROJECT_NAME}
-#   src/${PROJECT_NAME}/myservice.cpp
+#   src/${PROJECT_NAME}/tiago_service.cpp
 # )
+add_executable(move_to_destination src/Tiago_move.cpp)
+target_link_libraries(move_to_destination ${catkin_LIBRARIES})
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
@@ -147,7 +146,7 @@ file(GLOB SRC_HELPERS RELATIVE ${CMAKE_CURRENT_SOURCE_DIR}
 ## Declare a C++ executable
 ## With catkin_make all packages are built within a single CMake context
 ## The recommended prefix ensures that target names across packages don't collide
-add_executable(drink_server src/drink_server.cpp)
+# add_executable(${PROJECT_NAME}_node src/tiago_service_node.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -157,18 +156,12 @@ add_executable(drink_server src/drink_server.cpp)
 
 ## Add cmake target dependencies of the executable
 ## same as for the library above
-add_dependencies(drink_server ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+# add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(drink_server
-  ${catkin_LIBRARIES}
-)
-
-
-add_executable(ttestquery src/testquery.cpp)
-add_dependencies(ttestquery ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
-target_link_libraries(ttestquery  ${catkin_LIBRARIES})
-
+# target_link_libraries(${PROJECT_NAME}_node
+#   ${catkin_LIBRARIES}
+# )
 
 #############
 ## Install ##
@@ -217,7 +210,7 @@ target_link_libraries(ttestquery  ${catkin_LIBRARIES})
 #############
 
 ## Add gtest based cpp test target and link libraries
-# catkin_add_gtest(${PROJECT_NAME}-test test/test_myservice.cpp)
+# catkin_add_gtest(${PROJECT_NAME}-test test/test_tiago_service.cpp)
 # if(TARGET ${PROJECT_NAME}-test)
 #   target_link_libraries(${PROJECT_NAME}-test ${PROJECT_NAME})
 # endif()

@@ -33,13 +33,15 @@ of the predicates
 :- module(instance_utils,
     [
 	create_instance_from_class/3,
-	getClassPath/2
+	getClassPath/2,
+	getID/2,
+	getDirectClass/2
     ]).
 
 :- use_module(library('semweb/rdfs')).
 :- use_module(library('semweb/rdf_db')).
 
-:- rdf_db:rdf_register_ns(drink, 'http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#', [keep(true)]).
+:- rdf_db:rdf_register_ns(drinkOntology, 'http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#', [keep(true)]).
 
 %%%%%%%%%%%%%% Custom computables %%%%%%%%%%%%%%%%%%%%%%
 
@@ -82,4 +84,12 @@ getClassPath(Class, Class_path):-
 	% write(Class_path), nl
  	)).
 
+getID(Class, ID):- 
+	getClassPath(Class,Class_path),
+	owl_individual_of(Individual, Class_path),
+	owl_has(Individual, drinkOntology:'hasId', ID).
 
+getDirectClass(Class, DirectClass):-
+	getClassPath(Class,Class_path),
+	owl_individual_of(Individual, Class_path),
+	owl_has(Individual, rdf:type, DirectClass).

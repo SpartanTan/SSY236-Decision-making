@@ -9,7 +9,7 @@ int main(int argc, char **argv)
     ros::init(argc, argv, "mytest_ros_prolog");
     PrologClient pl = PrologClient("/rosprolog", true);
 
-    PrologQuery bdgs = pl.query("owl_individual_of(I, ssy236Ontology:'Orange')");
+    PrologQuery bdgs = pl.query("rdf_individual_of(I, ssy236Ontology:'Orange')");
 
     // // PrologQuery bdgs = pl.query("owl_individual_of(ssy236Ontology:'orange_2', ssy236Ontology:'Orange')");
     // bool res = false;

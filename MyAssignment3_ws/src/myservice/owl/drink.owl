@@ -41,9 +41,9 @@
     
 
 
-    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Acoholic -->
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Alcoholic -->
 
-    <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Acoholic">
+    <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Alcoholic">
         <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Drink"/>
     </owl:Class>
     
@@ -52,7 +52,7 @@
     <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Beer -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Beer">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Acoholic"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Alcoholic"/>
     </owl:Class>
     
 
@@ -98,7 +98,7 @@
     <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Vodka -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Vodka">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Acoholic"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Alcoholic"/>
     </owl:Class>
     
 
@@ -106,7 +106,7 @@
     <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Wine -->
 
     <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Wine">
-        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Acoholic"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Alcoholic"/>
     </owl:Class>
     
 
