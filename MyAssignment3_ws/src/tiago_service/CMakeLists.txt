@@ -8,6 +8,7 @@ project(tiago_service)
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
 find_package(catkin REQUIRED COMPONENTS
+  actionlib
   aruco_msgs
   control_msgs
   geometry_msgs
@@ -21,11 +22,13 @@ find_package(catkin REQUIRED COMPONENTS
   rospy
   shape_msgs
   std_msgs
+  myservice
+  rosprolog
   trajectory_msgs
 )
 
 ## System dependencies are found with CMake's conventions
-# find_package(Boost REQUIRED COMPONENTS system)
+find_package(Boost REQUIRED COMPONENTS system)
 
 
 ## Uncomment this if the package has a setup.py. This macro ensures
@@ -114,10 +117,27 @@ find_package(catkin REQUIRED COMPONENTS
 ## CATKIN_DEPENDS: catkin_packages dependent projects also need
 ## DEPENDS: system dependencies of this project that dependent projects also need
 catkin_package(
-#  INCLUDE_DIRS include
-#  LIBRARIES tiago_service
-#  CATKIN_DEPENDS aruco_msgs control_msgs geometry_msgs knowrob_tutorial message_generation move_base_msgs moveit_msgs moveit_ros_planning_interface nav_msgs roscpp rospy shape_msgs std_msgs trajectory_msgs
-#  DEPENDS system_lib
+ INCLUDE_DIRS include
+ LIBRARIES tiago_service
+ CATKIN_DEPENDS 
+ actionlib
+ aruco_msgs 
+ control_msgs 
+ geometry_msgs 
+ knowrob_tutorial 
+ move_base_msgs 
+ moveit_msgs 
+ moveit_ros_planning_interface 
+ nav_msgs 
+ roscpp 
+ rospy 
+ shape_msgs 
+ std_msgs 
+ trajectory_msgs
+ rosprolog
+ myservice
+ 
+ DEPENDS system_lib Boost
 )
 
 ###########
@@ -127,7 +147,7 @@ catkin_package(
 ## Specify additional locations of header files
 ## Your package locations should be listed before other locations
 include_directories(
-# include
+  # include
   ${catkin_INCLUDE_DIRS}
 )
 
@@ -137,6 +157,18 @@ include_directories(
 # )
 add_executable(move_to_destination src/Tiago_move.cpp)
 target_link_libraries(move_to_destination ${catkin_LIBRARIES})
+
+
+add_executable(Tiago_move_arm src/Tiago_move_arm.cpp)
+target_link_libraries(Tiago_move_arm ${catkin_LIBRARIES})
+
+add_executable(Tiago_move_cartesian src/Tiago_move_cartesian.cpp)
+target_link_libraries(Tiago_move_cartesian ${catkin_LIBRARIES})
+
+add_executable(Tiago_integration_demo src/Tiago_integration.cpp)
+# add_dependencies(Tiago_integration_demo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
+target_link_libraries(Tiago_integration_demo ${catkin_LIBRARIES})
+#add_dependencies(Tiago_integration_demo tiago_service_gencpp)
 
 ## Add cmake target dependencies of the library
 ## as an example, code may need to be generated before libraries
