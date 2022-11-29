@@ -114,8 +114,8 @@ void Tiago_service::fetch(double x, double y, double z)
     std::string s2 = " 1.57 0.0 0.0";
     std::string cmd = s1 + std::to_string(x_rel) + ' ' + std::to_string(y) + ' ' + std::to_string(z) + s2;
     ROS_INFO("command is: %s", cmd.c_str());
-    // system(cmd.c_str());
-    system("rosrun tiago_service Tiago_move_cartesian 0.4 -0.05 0.5 1.57 0.0 0.0");
+    system(cmd.c_str());
+    // system("rosrun tiago_service Tiago_move_cartesian 0.4 -0.05 0.5 1.57 0.0 0.0");
     ROS_INFO("Fetch complete");
 }
 void Tiago_service::timerCallback(const ros::TimerEvent& event)
@@ -171,7 +171,7 @@ bool Tiago_service::fetch_drink_service(tiago_service::fetch_drink::Request &req
     fetch_id(type);
     res.id = std::to_string(desired_id);
 
-    ros::Duration(5.0).sleep();
+    // ros::Duration(5.0).sleep();
     move_to_destination();
     
     ready_to_fetch_flg = true;
@@ -207,7 +207,8 @@ bool Tiago_service::fetch_drink_service(tiago_service::fetch_drink::Request &req
     }   
     ROS_INFO("Start fetching");
     fetch(res.drink_pose.position.x, res.drink_pose.position.y, res.drink_pose.position.z);
-
+    marker_pos_setting = false;
+    ready_to_fetch_flg = false;
 
     ROS_INFO("ROS service done");
 }
