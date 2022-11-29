@@ -7,7 +7,8 @@
                 "/usr/include/**",
                 "/opt/ros/melodic/include/**",
                 "${workspaceFolder}/devel/include/**",
-                "/home/user/exchange/tiago_docker/knowrob_melodic/src/rosprolog/include/**"
+                "/home/user/exchange/tiago_docker/knowrob_melodic/src/rosprolog/include/**",
+                "/home/user/exchange/tiago_docker/tiago_public_ws/devel/include"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

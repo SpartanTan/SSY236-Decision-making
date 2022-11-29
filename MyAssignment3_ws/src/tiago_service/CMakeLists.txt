@@ -155,6 +155,10 @@ include_directories(
 # add_library(${PROJECT_NAME}
 #   src/${PROJECT_NAME}/tiago_service.cpp
 # )
+
+add_executable(timertest src/timertest.cpp)
+target_link_libraries(timertest ${catkin_LIBRARIES})
+
 add_executable(move_to_destination src/Tiago_move.cpp)
 target_link_libraries(move_to_destination ${catkin_LIBRARIES})
 
@@ -164,6 +168,9 @@ target_link_libraries(Tiago_move_arm ${catkin_LIBRARIES})
 
 add_executable(Tiago_move_cartesian src/Tiago_move_cartesian.cpp)
 target_link_libraries(Tiago_move_cartesian ${catkin_LIBRARIES})
+
+add_executable(move_head src/move_head.cpp)
+target_link_libraries(move_head ${catkin_LIBRARIES})
 
 add_executable(Tiago_integration_demo src/Tiago_integration.cpp)
 # add_dependencies(Tiago_integration_demo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
