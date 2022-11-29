@@ -68,11 +68,10 @@ find_package(Boost REQUIRED COMPONENTS system)
 # )
 
 ## Generate services in the 'srv' folder
-# add_service_files(
-#   FILES
-#   Service1.srv
-#   Service2.srv
-# )
+add_service_files(
+  FILES
+  fetch_drink.srv
+)
 
 ## Generate actions in the 'action' folder
 # add_action_files(
@@ -81,11 +80,11 @@ find_package(Boost REQUIRED COMPONENTS system)
 #   Action2.action
 # )
 
-## Generate added messages and services with any dependencies listed here
-# generate_messages(
-#   DEPENDENCIES
-#   aruco_msgs#   control_msgs#   geometry_msgs#   move_base_msgs#   moveit_msgs#   nav_msgs#   shape_msgs#   std_msgs#   trajectory_msgs
-# )
+# Generate added messages and services with any dependencies listed here
+generate_messages(
+  DEPENDENCIES
+  aruco_msgs geometry_msgs std_msgs#   control_msgs#   geometry_msgs#   move_base_msgs#   moveit_msgs#   nav_msgs#   shape_msgs#   std_msgs#   trajectory_msgs
+)
 
 ################################################
 ## Declare ROS dynamic reconfigure parameters ##
@@ -171,6 +170,9 @@ target_link_libraries(Tiago_move_cartesian ${catkin_LIBRARIES})
 
 add_executable(move_head src/move_head.cpp)
 target_link_libraries(move_head ${catkin_LIBRARIES})
+
+add_executable(mtest src/mtest.cpp)
+target_link_libraries(mtest ${catkin_LIBRARIES})
 
 add_executable(Tiago_integration_demo src/Tiago_integration.cpp)
 # add_dependencies(Tiago_integration_demo ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})

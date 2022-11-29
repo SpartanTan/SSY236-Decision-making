@@ -88,7 +88,7 @@ void waypoints_head_goal(control_msgs::FollowJointTrajectoryGoal& goal, char** a
   // Positions
   int index = 0;
   goal.trajectory.points[index].positions.resize(n_joitns);
-  goal.trajectory.points[index].positions[0] = 0.2;
+  goal.trajectory.points[index].positions[0] = 0.0;
   goal.trajectory.points[index].positions[1] = 0.0;
   // Velocities
   goal.trajectory.points[index].velocities.resize(n_joitns);
@@ -104,8 +104,8 @@ void waypoints_head_goal(control_msgs::FollowJointTrajectoryGoal& goal, char** a
   index += 1;
   goal.trajectory.points[index].positions.resize(n_joitns); 
   // 
-  goal.trajectory.points[index].positions[0] = atof(argv[1]);;
-  goal.trajectory.points[index].positions[1] = atof(argv[2]);;
+  goal.trajectory.points[index].positions[0] = atof(argv[1]);
+  goal.trajectory.points[index].positions[1] = atof(argv[2]);
  
   // Velocities
   goal.trajectory.points[index].velocities.resize(n_joitns);
