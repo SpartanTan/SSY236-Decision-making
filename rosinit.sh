@@ -20,6 +20,8 @@ source /opt/ros/melodic/setup.bash
 source exchange/tiago_docker/tiago_public_ws/devel/setup.bash
 source exchange/tiago_docker/knowrob_melodic/devel/setup.bash
 source exchange/tiago_docker/SSY236-Decision-making/assignment03_ws/devel/setup.bash
+source exchange/tiago_docker/ssy236_g02/devel/setup.bash
+
 # in knowrob package
 # compile the exact pkg
 catkin_make --only-pkg-with-deps genowl
