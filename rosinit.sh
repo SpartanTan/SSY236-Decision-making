@@ -46,4 +46,5 @@ roslaunch tiago_aruco_demo detector.launch markerId:=<marker_ID> markerSize:=0.0
 export GAZEBO_MODEL_PATH=/home/user/exchange/tiago_docker/ssy236_g02/src/barbot_demo/models/:/home/user/exchange/tiago_docker/tiago_public_ws/src/tiago_simulation/tiago_gazebo/models
 export GAZEBO_RESOURCE_PATH=/home/user/exchange/tiago_docker/ssy236_g02/src/barbot_demo
 
-
+# rqt controller interface
+rosrun rqt_joint_trajectory_controller rqt_joint_trajectory_controller
