@@ -1,2 +1,9 @@
 /MyAssignment3_ws/build/
 /MyAssignment3_ws/devel/
+/MyAssignment3_ws/.vscode/
+/MyAssignment3_ws/.catkin_workspace
+
+/ssy236_g02/build/
+/ssy236_g02/devel/
+/ssy236_g02/.vscode/
+/ssy236_g02/.catkin_workspace
