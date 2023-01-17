@@ -1,0 +1,5 @@
+string type
+uint8 table_number
+---
+string id
+string drink_class

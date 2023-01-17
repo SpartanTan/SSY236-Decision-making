@@ -1,0 +1,529 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3"
+     xml:base="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:group2-ontology-3="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasbasedrink -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasbasedrink">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasflavour -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasflavour"/>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasingredients -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasingredients">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#InverseFunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Menu"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Base_drink"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Flavours"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasID">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Base_drink"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Flavours"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasVolume -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasVolume"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Alcoholic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Alcoholic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Base_drink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Base_drink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Base_drink">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Drinks"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Beer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Beer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Alcoholic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Beer_menu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Beer_menu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Menu"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasingredients"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Beer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Coke -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Coke">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Non-Alcoholic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Coke_menu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Coke_menu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Menu"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasingredients"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Coke"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Drinks -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Drinks"/>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Fanta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Fanta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Non-Alcoholic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Fanta_menu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Fanta_menu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Menu"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasingredients"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Fanta"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Flavours -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Flavours">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Drinks"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasID"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Flavours"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_Vodka -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_Vodka">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vodka_menu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_beer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_beer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Beer_menu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_coke -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_coke">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Coke_menu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_fanta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_fanta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Fanta_menu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Menu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Menu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Drinks"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Non-Alcoholic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Non-Alcoholic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Base_drink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanila -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanila">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Flavours"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_beer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_beer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Beer_menu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_coke -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_coke">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Coke_menu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_fanta -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_fanta">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Fanta_menu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_vodka -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_vodka">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vodka_menu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vodka -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vodka">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Alcoholic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vodka_menu -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vodka_menu">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Menu"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#hasingredients"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vodka"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Beer_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Beer_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Beer"/>
+        <group2-ontology-3:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</group2-ontology-3:hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Coke_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Coke_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Coke"/>
+        <group2-ontology-3:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</group2-ontology-3:hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Fanta_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Fanta_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Fanta"/>
+        <group2-ontology-3:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</group2-ontology-3:hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lemon_beer_M -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lemon_beer_M">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_beer"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">500</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lemon_beer_S -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lemon_beer_S">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_beer"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">250</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime"/>
+        <group2-ontology-3:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8</group2-ontology-3:hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_Vodka_M -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_Vodka_M">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_Vodka"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">500</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_Vodka_S -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_Vodka_S">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_Vodka"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">250</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_coke_M -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_coke_M">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_coke"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">500</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_coke_S -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_coke_S">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_coke"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">250</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_fanta_M -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_fanta_M">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_fanta"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">500</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_fanta_S -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_fanta_S">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Lime_fanta"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">250</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanila"/>
+        <group2-ontology-3:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">582</group2-ontology-3:hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_beer_M -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_beer_M">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_beer"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">500</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_beer_S -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_beer_S">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_beer"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">250</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_coke_M -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_coke_M">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_coke"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">500</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_coke_S -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_coke_S">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_coke"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">250</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_fanta_M -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_fanta_M">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_fanta"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">500</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_fanta_S -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_fanta_S">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_fanta"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">250</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_vodka_M -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_vodka_M">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_vodka"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">500</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_vodka_S -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_vodka_S">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vanilla_vodka"/>
+        <group2-ontology-3:hasVolume rdf:datatype="http://www.w3.org/2001/XMLSchema#int">250</group2-ontology-3:hasVolume>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vodka_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vodka_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/vamsi/ontologies/2023/0/group2-ontology-3#Vodka"/>
+        <group2-ontology-3:hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</group2-ontology-3:hasID>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

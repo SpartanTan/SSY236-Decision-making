@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<launch>
+
+ <!-- rosprolog for storing & providing ontology services -->
+  <arg name="package_name"      default="barbot_brain"/>
+  <param name="initial_package" type="string" value="$(arg package_name)" />
+  <node name="rosprolog" pkg="rosprolog" type="rosprolog_node" output="screen"/>
+
+</launch>

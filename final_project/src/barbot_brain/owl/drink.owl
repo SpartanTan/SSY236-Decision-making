@@ -1,0 +1,154 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/tzc/ontologies/2022/10/untitled-ontology-7#"
+     xml:base="http://www.semanticweb.org/tzc/ontologies/2022/10/untitled-ontology-7"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:drink-onotology="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#hasId -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#hasId">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Alcoholic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Alcoholic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Drink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Beer -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Beer">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Alcoholic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Coke -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Coke">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Non-Alcoholic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Drink -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Drink"/>
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Maaza -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Maaza">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Non-Alcoholic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Milk -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Milk">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Non-Alcoholic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Non-Alcoholic -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Non-Alcoholic">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Drink"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Vodka -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Vodka">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Alcoholic"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Wine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Wine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Alcoholic"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#CokeLite -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#CokeLite">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Coke"/>
+        <drink-onotology:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</drink-onotology:hasId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Corona -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Corona">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Beer"/>
+        <drink-onotology:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">0</drink-onotology:hasId>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Vod1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Vod1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/tzc/ontologies/2022/10/drink-onotology#Vodka"/>
+        <drink-onotology:hasId rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</drink-onotology:hasId>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

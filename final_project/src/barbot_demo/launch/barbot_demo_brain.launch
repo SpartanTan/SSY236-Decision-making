@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<launch>
+
+  <arg name="package_name"      default="barbot_brain"/>
+  <param name="initial_package" type="string" value="$(arg package_name)" />
+  <node name="rosprolog" pkg="rosprolog" type="rosprolog_node" output="screen"/>
+  <node name="barbot_demo_node" pkg="barbot_demo" type="barbot_demo" output="screen"/>
+</launch>

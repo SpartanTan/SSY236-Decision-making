@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<launch>
+
+ 
+  <include file="$(find tiago_2dnav_gazebo)/launch/tiago_navigation.launch">
+    <!-- <arg name="gzpose" value="-x 7.20  -y -3.31 -z  0.0   -R 0.0 -P 0.0 -Y  -1.587"/> -->
+    
+    <arg name="robot"      value="steel"/>
+    <arg name="public_sim" value="true"/>
+    <arg name="gzpose" value="-x 0.0  -y 0.0 -z  0.0   -R 0.0 -P 0.0 -Y  -1.587"/>
+    <arg name="world"      value="demo_final"/>
+    <arg name="map"      value="/home/user/exchange/tiago_docker/ssy236_g02/src/barbot_demo/maps/demo_map"/>
+  </include>
+
+  <!-- rosprolog for storing & providing ontology services -->
+  <arg name="package_name"      default="barbot_brain"/>
+  <param name="initial_package" type="string" value="$(arg package_name)" />
+  <node name="rosprolog" pkg="rosprolog" type="rosprolog_node" output="screen"/>
+
+  <!-- <include file="$(find barbot_move)/launch/multi_detector.launch">
+    <arg name="markerSize"      value="0.045"/>
+  </include> -->
+
+  <!-- <node name="barbot_demo_node" pkg="barbot_demo" type="barbot_demo" output="screen"/> -->
+</launch>
